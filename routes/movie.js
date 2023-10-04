@@ -75,7 +75,7 @@ router.put("/updateMovie/:id", (req, res) => {
   } else res.status(400).send("provide valid movie id!");
 });
 
-router.delete("/deleteMovie/:id", (req, res) => {
+router.delete("/deleteMovie/:id", auth, (req, res) => {
   const id = parseInt(req.params.id);
 
   if (!Number.isNaN(id)) {
